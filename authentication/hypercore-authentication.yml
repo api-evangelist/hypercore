@@ -1,0 +1,30 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.hypercore.ai/docs/api/authentication/
+verified_via: live probe of https://api.hypercore.ai/graphql
+summary:
+  types:
+  - http
+  api_key_in: []
+  oauth2_flows: []
+  transport: graphql
+notes: >-
+  Hypercore exposes a single GraphQL endpoint at https://api.hypercore.ai/graphql.
+  Authentication is by a bearer access token supplied on the request. An
+  unauthenticated request returns a GraphQL error with
+  extensions.code = "UNAUTHENTICATED" and message "missing access token". The
+  schema declares a custom `@auth` directive used to enforce authorization at the
+  field/operation level. GraphQL introspection is currently open on the production
+  endpoint (unauthenticated).
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: >-
+    Bearer access token passed with each GraphQL request. Missing/invalid tokens
+    yield extensions.code UNAUTHENTICATED.
+  sources:
+  - graphql/hypercore-schema.graphql
+directives:
+- name: auth
+  description: Custom GraphQL directive enforcing authentication/authorization per field.
