@@ -1,0 +1,29 @@
+# Hypercore
+
+> Hypercore is a loan management and servicing platform for private credit lenders, venture debt funds, and commercial real estate financiers. It manages loans end to end — pipeline, deal onboarding, origination, funding-source allocation, servicing, and maturity — with automation, portfolio BI, and an AI admin agent. Hypercore exposes a production GraphQL API. SOC 2 Type II certified. Backed by Y Combinator and Insight Partners; based in Tel Aviv, Israel.
+
+## API
+- [Hypercore GraphQL API docs](https://docs.hypercore.ai/docs/api/): Docusaurus-documented GraphQL API — 84 queries, 254 mutations, 5 subscriptions across 599 schema types (loans, equities, clients, funding sources, documents, statements, data tables, change requests).
+- [GraphQL endpoint](https://api.hypercore.ai/graphql): production single endpoint; bearer access-token auth; offset (skip/limit) pagination.
+- [Authentication](https://docs.hypercore.ai/docs/api/authentication/): bearer access token; unauthenticated calls return extensions.code UNAUTHENTICATED.
+- [API changelog](https://docs.hypercore.ai/docs/api/changelog): dated GraphQL schema release notes (current v2-232-0).
+
+## Specs & artifacts (API Evangelist)
+- [GraphQL schema (introspected verbatim)](graphql/hypercore-schema.graphql)
+- [Authentication profile](authentication/hypercore-authentication.yml)
+- [Error codes](errors/hypercore-error-codes.yml)
+- [API conventions](conventions/hypercore-conventions.yml)
+- [Data model](data-model/hypercore-data-model.yml)
+- [Changelog](changelog/hypercore-changelog.yml)
+- [Conformance](conformance/hypercore-conformance.yml)
+- [MCP candidate tools](mcp/hypercore-mcp.yml)
+- [Agent skills](skills/_index.yml)
+
+## Company
+- [Website](https://www.hypercore.ai/)
+- [Security & compliance (SOC 2 Type II)](https://www.hypercore.ai/security)
+- [Trust center](https://trust.hypercore.ai/)
+- [Resources / blog](https://www.hypercore.ai/resources)
+- [Terms of Use](https://www.hypercore.ai/terms-of-use)
+- [Privacy Policy](https://www.hypercore.ai/privacy-policy)
+- [Contact](https://www.hypercore.ai/contact-us)

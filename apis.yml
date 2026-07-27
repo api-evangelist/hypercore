@@ -1,7 +1,17 @@
 aid: hypercore
 name: Hypercore
-description: Hypercore is a company surfaced as a portfolio company of insight-partners and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Hypercore is a loan management and servicing platform built for private credit
+  lenders, venture debt funds, and commercial real estate financiers. It manages
+  loans end to end — from pipeline and deal onboarding through origination,
+  funding-source allocation, servicing, and maturity — with automation, portfolio
+  business intelligence, and an AI admin agent for loan workflows. The platform
+  exposes a production GraphQL API (single endpoint at api.hypercore.ai/graphql,
+  Docusaurus-documented at docs.hypercore.ai) covering loans, equities, clients,
+  funding sources, documents, statements, data tables, notifications, imports, and
+  a maker/checker change-request approval workflow. Hypercore is a Y Combinator and
+  Insight Partners backed company headquartered in Tel Aviv, Israel, and is SOC 2
+  Type II certified.
 url: https://raw.githubusercontent.com/api-evangelist/hypercore/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,17 +19,105 @@ x-backed-by:
 - insight-partners
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://cdn.prod.website-files.com/657c16376a943cd358275fbf/65b8e695eeb2a467898bbd02_Open%20graph.png
 tags:
 - Company
-apis: []
+- Loan Management
+- Private Credit
+- Lending
+- Venture Debt
+- Commercial Real Estate
+- Loan Servicing
+- Fintech
+- Financial Services
+- GraphQL
+apis:
+- name: Hypercore GraphQL API
+  description: >-
+    Hypercore's production GraphQL API for private-credit loan management —
+    a single GraphQL endpoint covering loans, equities, clients, funding sources,
+    documents, statements, data tables, deal onboarding, imports, notifications,
+    and a maker/checker change-request approval workflow. 84 queries, 254
+    mutations, and 5 subscriptions across 599 schema types. Bearer access-token
+    authentication; offset (skip/limit) pagination; versioned schema (v2).
+  humanURL: https://docs.hypercore.ai/docs/api/
+  baseURL: https://api.hypercore.ai/graphql
+  properties:
+  - type: GraphQL
+    url: graphql/hypercore-schema.graphql
+  - type: APIReference
+    url: https://docs.hypercore.ai/docs/api/
+  - type: Authentication
+    url: https://docs.hypercore.ai/docs/api/authentication/
+  - type: ChangeLog
+    url: https://docs.hypercore.ai/docs/api/changelog
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: VulnerabilityDisclosure
+  url: security/hypercore-vulnerability-disclosure.yml
 - type: Website
   url: https://www.hypercore.ai/
+- type: DeveloperPortal
+  url: https://docs.hypercore.ai/
+- type: Documentation
+  url: https://docs.hypercore.ai/docs/api/
+- type: APIReference
+  url: https://docs.hypercore.ai/docs/api/
+- type: Authentication
+  url: authentication/hypercore-authentication.yml
+- type: ChangeLog
+  url: changelog/hypercore-changelog.yml
+- type: Blog
+  url: https://www.hypercore.ai/resources
+- type: Security
+  url: https://www.hypercore.ai/security
+- type: TrustCenter
+  url: security/hypercore-trust-center.yml
+- type: Compliance
+  url: https://www.hypercore.ai/security
+- type: Conformance
+  url: conformance/hypercore-conformance.yml
+- type: TermsOfService
+  url: https://www.hypercore.ai/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.hypercore.ai/privacy-policy
+- type: Support
+  url: https://www.hypercore.ai/contact-us
+- type: DataModel
+  url: data-model/hypercore-data-model.yml
+- type: Conventions
+  url: conventions/hypercore-conventions.yml
+- type: ErrorCatalog
+  url: errors/hypercore-error-codes.yml
+- type: DomainSecurity
+  url: security/hypercore-domain-security.yml
+- type: MCPServer
+  url: mcp/hypercore-mcp.yml
+- type: LLMsTxt
+  url: llms/hypercore-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

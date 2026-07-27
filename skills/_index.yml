@@ -1,0 +1,13 @@
+generated: '2026-07-19'
+method: generated
+api: graphql/hypercore-schema.graphql
+endpoint: https://api.hypercore.ai/graphql
+skills:
+- file: hypercore-onboard-client.md
+  name: Onboard a client and create a loan
+  api: graphql/hypercore-schema.graphql
+  operations: [createClient, createLoan, approveLoan, activateLoan]
+- file: hypercore-change-request-approval.md
+  name: Route an edit through maker/checker approval
+  api: graphql/hypercore-schema.graphql
+  operations: [requestChangeApproval, updateChangeRequestAsMaker, updateChangeRequestAsChecker, approveChangeRequest, rejectChangeRequest]

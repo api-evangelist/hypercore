@@ -1,0 +1,19 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.hypercore.ai/security
+standards:
+- id: graphql
+  conforms: true
+  evidence: Production GraphQL endpoint at https://api.hypercore.ai/graphql (introspectable schema, 599 types).
+- id: soc2-type-ii
+  conforms: true
+  evidence: 'Hypercore /security page: "We have obtained our SOC 2 Type II certification."'
+- id: oauth2
+  conforms: false
+  evidence: No oauth2 security scheme; authentication is bearer access token.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: GraphQL error envelope (errors[].extensions.code), not RFC 9457 problem+json.
+- id: relay-connections
+  conforms: false
+  evidence: Offset (skip/limit) pagination with Paginated<Entity> wrappers, not Relay cursor connections.

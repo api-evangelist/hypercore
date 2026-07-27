@@ -1,0 +1,21 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.hypercore.ai/docs/api/changelog
+scheme: 'v2-<minor>-<patch> (GraphQL schema release notes; schema major = v2)'
+current_version: v2-232-0
+notes: >-
+  Hypercore publishes dated API release notes in the docs changelog. The docs are
+  client-rendered (Docusaurus), so per-version dates and highlights are not
+  captured verbatim here; the version identifiers below are enumerated from the
+  published changelog sitemap. Visit the changelog for full per-release detail.
+recent_versions:
+- version: v2-232-0
+- version: v2-231-0
+- version: v2-229-0
+- version: v2-227-0
+- version: v2-226-0
+- version: v2-223-0
+- version: v2-218-0
+- version: v2-212-0
+- version: v2-208-0
+- version: v2-207-0

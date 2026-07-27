@@ -1,0 +1,30 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.hypercore.ai/docs/api/errors
+verified_via: live probes of https://api.hypercore.ai/graphql
+envelope:
+  format: graphql
+  description: >-
+    Errors are returned in the standard GraphQL top-level `errors[]` array. Each
+    error carries `message`, `locations[]`, `path[]`, and an `extensions` object
+    whose `code` field classifies the error. Partial data may be returned in
+    `data` alongside `errors` (e.g. the failing field is null).
+  fields:
+  - errors[].message
+  - errors[].locations
+  - errors[].path
+  - errors[].extensions.code
+codes:
+- code: UNAUTHENTICATED
+  meaning: No or invalid bearer access token supplied.
+  observed_message: missing access token
+  observed: true
+- code: INTERNAL_SERVER_ERROR
+  meaning: Server-side error (also returned for some malformed/invalid operations).
+  observed: true
+notes: >-
+  Codes list reflects error classes observed live against the production endpoint
+  plus the documented error reference at docs.hypercore.ai/docs/api/errors. The
+  schema also defines an `ImportError` object type for bulk-import row errors. This
+  catalog is not exhaustive; additional extensions.code values are documented in
+  the API error reference.

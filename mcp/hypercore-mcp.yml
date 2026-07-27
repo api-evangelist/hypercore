@@ -1,0 +1,48 @@
+generated: '2026-07-19'
+method: derived
+status: candidate
+source: graphql/hypercore-schema.graphql
+server:
+  name: hypercore
+  transport: http
+  url: null
+notes: >-
+  No official hosted Hypercore MCP server was found. This is a CANDIDATE tool list
+  derived from the production GraphQL schema (84 queries, 254 mutations). Tools map
+  one-to-one to GraphQL root operations against https://api.hypercore.ai/graphql
+  (bearer access token). A representative subset is listed; the full operation set
+  is enumerated in graphql/hypercore-schema.graphql.
+tools:
+- name: get_client
+  description: Fetch a single client by id.
+  source_operation: graphql/hypercore-schema.graphql#Query.client
+- name: list_clients
+  description: List clients (offset pagination via skip/limit).
+  source_operation: graphql/hypercore-schema.graphql#Query.clients
+- name: create_client
+  description: Create a new client (borrower/counterparty).
+  source_operation: graphql/hypercore-schema.graphql#Mutation.createClient
+- name: update_client
+  description: Update an existing client.
+  source_operation: graphql/hypercore-schema.graphql#Mutation.updateClient
+- name: get_loan
+  description: Fetch a single loan by id.
+  source_operation: graphql/hypercore-schema.graphql#Query.loan
+- name: list_loans
+  description: List loans (offset pagination via skip/limit).
+  source_operation: graphql/hypercore-schema.graphql#Query.loans
+- name: create_loan
+  description: Create a new loan.
+  source_operation: graphql/hypercore-schema.graphql#Mutation.createLoan
+- name: approve_loan
+  description: Approve a loan application.
+  source_operation: graphql/hypercore-schema.graphql#Mutation.approveLoan
+- name: activate_loan
+  description: Activate an approved loan.
+  source_operation: graphql/hypercore-schema.graphql#Mutation.activateLoan
+- name: request_change_approval
+  description: Route a sensitive edit through the maker/checker change-request workflow.
+  source_operation: graphql/hypercore-schema.graphql#Mutation.requestChangeApproval
+- name: approve_change_request
+  description: Approve a pending change request (checker role).
+  source_operation: graphql/hypercore-schema.graphql#Mutation.approveChangeRequest

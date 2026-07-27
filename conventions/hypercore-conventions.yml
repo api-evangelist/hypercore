@@ -1,0 +1,56 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.hypercore.ai/docs/api/
+verified_via: introspection + live probes of https://api.hypercore.ai/graphql
+api_style:
+  protocol: graphql
+  endpoint: https://api.hypercore.ai/graphql
+  operations:
+    queries: 84
+    mutations: 254
+    subscriptions: 5
+  transports:
+    subscriptions: graphql-ws (WebSocket)
+authentication:
+  style: bearer-access-token
+  detail: See authentication/hypercore-authentication.yml
+  directive: '@auth'
+pagination:
+  style: offset
+  params:
+  - skip
+  - limit
+  response: >-
+    List queries return `Paginated<Entity>` wrapper object types (e.g.
+    PaginatedClients, PaginatedLoans, PaginatedInvestmentEntities) rather than
+    Relay cursor connections. No pageInfo/cursor/hasNextPage convention is present.
+error_envelope:
+  detail: See errors/hypercore-error-codes.yml
+  shape: GraphQL errors[] with extensions.code
+versioning:
+  scheme: schema-version
+  detail: >-
+    Schema is versioned as v2 with dated release notes (v2-<minor>-<patch>, e.g.
+    v2-232-0) published in the API changelog.
+  changelog: https://docs.hypercore.ai/docs/api/changelog
+change_control:
+  pattern: maker-checker
+  detail: >-
+    Hypercore implements a maker/checker (dual-control) change-request approval
+    workflow. Mutations such as requestChangeApproval, approveChangeRequest,
+    rejectChangeRequest, updateChangeRequestAsMaker, and updateChangeRequestAsChecker
+    route sensitive edits through a review/approval step before they are applied.
+idempotency:
+  supported: false
+  detail: >-
+    No documented idempotency-key header or parameter was found. GraphQL mutations
+    are the write surface; retries are not guaranteed idempotent.
+metadata:
+  custom_fields: >-
+    The schema exposes custom document templates, data tables, and generic data
+    applications for tenant-defined fields.
+cross_links:
+  authentication: authentication/hypercore-authentication.yml
+  errors: errors/hypercore-error-codes.yml
+  changelog: changelog/hypercore-changelog.yml
+  data_model: data-model/hypercore-data-model.yml

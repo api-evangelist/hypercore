@@ -1,0 +1,176 @@
+generated: '2026-07-19'
+method: derived
+source: graphql/hypercore-schema.graphql (introspected from https://api.hypercore.ai/graphql)
+notes: Entity-relationship graph derived from the introspected GraphQL object types
+  and their field references. Domains mirror the API documentation modules at docs.hypercore.ai/docs/api/.
+domains:
+- loans
+- equities
+- clients
+- funding-sources
+- documents
+- statements
+- deal-onboarding
+- data-tables
+- change-requests
+- notifications
+- import
+- common
+entities:
+- name: Client
+  domain_hint: null
+- name: Loan
+  domain_hint: null
+- name: LoanTransaction
+  domain_hint: null
+- name: LoanSchedule
+  domain_hint: null
+- name: Investment
+  domain_hint: null
+- name: InvestmentEntity
+  domain_hint: null
+- name: Equity
+  domain_hint: null
+- name: WorkflowCard
+  domain_hint: null
+- name: ImportInfo
+  domain_hint: null
+- name: User
+  domain_hint: null
+- name: ChangeRequest
+  domain_hint: null
+- name: Broker
+  domain_hint: null
+- name: LoanTemplate
+  domain_hint: null
+- name: CustomDocumentTemplate
+  domain_hint: null
+relationships:
+- from: Loan
+  to: User
+  kind: has_one
+  via: owner
+- from: Loan
+  to: User
+  kind: has_many
+  via: owners
+- from: Loan
+  to: Client
+  kind: has_one
+  via: client
+- from: Loan
+  to: Broker
+  kind: has_one
+  via: broker
+- from: Loan
+  to: LoanSchedule
+  kind: has_one
+  via: repaymentSchedule
+- from: Loan
+  to: LoanSchedule
+  kind: has_one
+  via: expectedSchedule
+- from: Loan
+  to: LoanSchedule
+  kind: has_one
+  via: originalExpectedSchedule
+- from: Loan
+  to: LoanTransaction
+  kind: has_many
+  via: transactions
+- from: Loan
+  to: LoanTransaction
+  kind: has_one
+  via: lastTransaction
+- from: Loan
+  to: Investment
+  kind: has_many
+  via: oldFundingSources
+- from: Loan
+  to: ImportInfo
+  kind: has_one
+  via: importInfo
+- from: Loan
+  to: WorkflowCard
+  kind: has_many
+  via: workflowCards
+- from: Loan
+  to: Equity
+  kind: has_many
+  via: equities
+- from: Loan
+  to: ChangeRequest
+  kind: has_one
+  via: changeRequest
+- from: LoanTransaction
+  to: Loan
+  kind: has_one
+  via: loan
+- from: Investment
+  to: InvestmentEntity
+  kind: has_one
+  via: investor
+- from: InvestmentEntity
+  to: Investment
+  kind: has_many
+  via: investorsInvestments
+- from: InvestmentEntity
+  to: Investment
+  kind: has_many
+  via: investments
+- from: Equity
+  to: Investment
+  kind: has_many
+  via: fundingSources
+- from: Equity
+  to: Client
+  kind: has_one
+  via: client
+- from: Equity
+  to: Loan
+  kind: has_one
+  via: loan
+- from: Equity
+  to: User
+  kind: has_many
+  via: owners
+- from: WorkflowCard
+  to: Client
+  kind: has_one
+  via: client
+- from: WorkflowCard
+  to: User
+  kind: has_one
+  via: owner
+- from: WorkflowCard
+  to: Loan
+  kind: has_one
+  via: loan
+- from: WorkflowCard
+  to: Equity
+  kind: has_one
+  via: equity
+- from: WorkflowCard
+  to: Broker
+  kind: has_one
+  via: broker
+- from: ImportInfo
+  to: User
+  kind: has_one
+  via: createdBy
+- from: ChangeRequest
+  to: Loan
+  kind: has_one
+  via: loan
+- from: ChangeRequest
+  to: User
+  kind: has_one
+  via: maker
+- from: ChangeRequest
+  to: User
+  kind: has_one
+  via: createdBy
+- from: Broker
+  to: Client
+  kind: has_many
+  via: clients
