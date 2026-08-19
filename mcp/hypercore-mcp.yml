@@ -6,12 +6,10 @@ server:
   name: hypercore
   transport: http
   url: null
-notes: >-
-  No official hosted Hypercore MCP server was found. This is a CANDIDATE tool list
-  derived from the production GraphQL schema (84 queries, 254 mutations). Tools map
-  one-to-one to GraphQL root operations against https://api.hypercore.ai/graphql
-  (bearer access token). A representative subset is listed; the full operation set
-  is enumerated in graphql/hypercore-schema.graphql.
+notes: No official hosted Hypercore MCP server was found. This is a CANDIDATE tool list derived from the
+  production GraphQL schema (84 queries, 254 mutations). Tools map one-to-one to GraphQL root operations
+  against https://api.hypercore.ai/graphql (bearer access token). A representative subset is listed; the
+  full operation set is enumerated in graphql/hypercore-schema.graphql.
 tools:
 - name: get_client
   description: Fetch a single client by id.
@@ -46,3 +44,9 @@ tools:
 - name: approve_change_request
   description: Approve a pending change request (checker role).
   source_operation: graphql/hypercore-schema.graphql#Mutation.approveChangeRequest
+deployment:
+  mode: none
+  verified: derived
+  tools: 11
+  checked: '2026-08-12'
+  source: catalog MCP census
