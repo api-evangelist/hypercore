@@ -47,6 +47,10 @@ specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-19'
 image: https://cdn.prod.website-files.com/657c16376a943cd358275fbf/65b8e695eeb2a467898bbd02_Open%20graph.png
+x-docs-platform: docusaurus
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-10-03
+x-docs-hosting: aws-cloudfront
 tags:
 - Company
 - Loan Management
@@ -56,7 +60,7 @@ tags:
 - Commercial Real Estate
 - Loan Servicing
 - Fintech
-- Financial-Services
+- Financial Services
 - GraphQL
 tags_raw:
 - Company
@@ -69,6 +73,7 @@ tags_raw:
 - Fintech
 - Financial Services
 - GraphQL
+- Financial-Services
 apis:
 - name: Hypercore GraphQL API
   description: >-
